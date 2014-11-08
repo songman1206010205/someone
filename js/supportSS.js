@@ -1,14 +1,9 @@
-// 计算相对底部容器顶部间距
 function getPosTop(i){
     return 20 + i*120;
 }
-
-// 计算相对底部容器左边间距
 function getPosLeft(j){
     return 20 + j *120;
 }
-
-// 判断是否存在空间生成数字
 function noSpace(board){   
     for (var i=0;i<board.length;i++){
     	for (var j=0;j<board[i].length;j++){
@@ -18,13 +13,11 @@ function noSpace(board){
     }
     return true;
 }
-
-// 生成背景颜色
 function getNumBackgroundColor( num ){
 	var bg;
 	switch(num){
 		case 2:
-			bg="#eee4da";
+			bg="#eee4d1";
 			break;
 		case 4:
 		    bg="#eee4c8";
@@ -51,24 +44,22 @@ function getNumBackgroundColor( num ){
 			bg="#3365e5";
 			break;
 		case 1024:
-		    bg="#0099cc";
+		    bg="#09c";
 			break;
 		case 2048:
-			bg="#0066ee";
+			bg="#06e";
 			break;
 		case 4096:
-		    bg="#9933ee";
+		    bg="#93e";
 			break;
 		case 8192:
-		    bg="#5588ff";
+		    bg="#58f";
 			break;
         default: 
-        	bg="black";
+        	bg="brown";
 	}
 	return bg;
 }
-
-// 生成数字颜色
 function getNumColor( num ){
 	if (num<=4){
 		return "#776e65";
@@ -78,8 +69,6 @@ function getNumColor( num ){
 	}
 
 }
-
-// 判断游戏是否结束
 function isGameover(){
 	for( var i = 0 ;i < 4 ; i ++ ){
         for( var j = 0 ; j < 4 ; j ++ ){
@@ -93,16 +82,12 @@ function isGameover(){
    	};
     return true;
 };
-
-// 游戏结束操作
 function gameover(){
 	if (isGameover()){
 		showGameoverAnimate();
 	}
 
 }
-
-// 棋盘格向左移动发生的操作
 function moveLeft(){
 	var can=false;
 	var tempArr=[];
@@ -127,17 +112,7 @@ function moveLeft(){
         };
         if (tempArr[i].length>0  && tempArr[i].length<=3){
         	for (var h=0; h<4;h++){
-        		// if (h<tempArr[i].length && board[i][h]!==tempArr[i][h]){
-        		// 	board[i][h]=tempArr[i][h];
-        		// 	can=true;
-        		// }
-        		// if (h>=tempArr[i].length &&board[i][h]!==0){
-        		// 	board[i][h]=0; 
-        		// 	can=true;  			
-        		// }
-        		// else if (h>=tempArr[i].length){
-        		// 	board[i][h]=0;		
-        		// }
+
         		if (h<tempArr[i].length){
         			if (board[i][h]!=tempArr[i][h]){
         				board[i][h]=tempArr[i][h];
@@ -160,8 +135,6 @@ function moveLeft(){
     };
 	return can;
 }
-
-// 棋盘格向上移动发生的操作
 function moveUp(){
 	var can=false;
 	var tempArr=[];
@@ -208,8 +181,6 @@ function moveUp(){
     };
 	return can;
 }
-
-// 棋盘格向右移动发生的操作
 function moveRight(){
 	var can=false;
 	var tempArr=[];
@@ -218,10 +189,6 @@ function moveRight(){
 	var len=board[0].length;
 	for(var i = 0 ; i < len ; i ++ ){
 		initAdd=false;
-		// tempArr=board[i].filter(function(intem,index,array){
-		// 	return (item>0);
-		// });
-
         tempArr=[];
 		board[i].reduceRight(function(prev,curv){
     		if (curv!=0){
@@ -266,8 +233,6 @@ function moveRight(){
     };
 	return can;
 }
-
-// 棋盘格向下移动发生的操作
 function moveDown(){
 	var can=false;
 	var tempArr,tempArr2=[];

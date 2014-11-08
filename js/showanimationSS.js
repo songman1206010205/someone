@@ -30,6 +30,6 @@ function showScoreAnimate(score){
 // 游戏结束时的动画效果
 function showGameoverAnimate(){
 	var ascoreDom=$("#oa");
-	ascoreDom.text("Game Over!");
+	ascoreDom.text("啊哈结束了!");
 	ascoreDom.fadeIn(1000).fadeOut(3000);
 }
