@@ -1,4 +1,3 @@
-//生成数字的动画效果
 function showNumAnimate(i, j, randNum) {
     var numCell=$("#number-cell-"+i+"-"+j);
 	numCell.css("background-color",getNumBackgroundColor( randNum ));
@@ -14,8 +13,6 @@ function showNumAnimate(i, j, randNum) {
 	  600
 	);
 }
-
-//显示分数的动画效果
 function showScoreAnimate(score){
     
 	var oscoreDom=$("#score");
@@ -26,8 +23,6 @@ function showScoreAnimate(score){
 	ascoreDom.fadeIn(300).fadeOut(300);
 	oscoreDom.text(oscoreNum);
 }
-
-// 游戏结束时的动画效果
 function showGameoverAnimate(){
 	var ascoreDom=$("#oa");
 	ascoreDom.text("啊哈结束了!");
